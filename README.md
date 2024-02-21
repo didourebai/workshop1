@@ -31,38 +31,38 @@ To build the image, you'll need to use a Dockerfile. A Dockerfile is simply a te
    Make sure you're in the `getting-started-app` directory. Replace `/path/to/getting-started-app` with the path to your `getting-started-app` directory.
 
    ```console
-   $ cd workshop1
+    cd workshop1
    ```
 
    Create an empty file named `Dockerfile`.
 
    ```console
-   $ code Dockerfile
+    code Dockerfile
    ```
 
    In the Windows Command Prompt, run the following commands.
 
    ```console
-   $ cd workshop1
+    cd workshop1
    ```
 
    Create an empty file named `Dockerfile`.
 
    ```console
-   $ type nul > Dockerfile
+    type nul > Dockerfile
    ```
 
    In PowerShell, run the following commands.
 
 
    ```console
-   $ cd workshop1
+    cd workshop1
    ```
 
    Create an empty file named `Dockerfile`.
 
    ```powershell
-   $ New-Item -Path . -Name Dockerfile -ItemType File
+   New-Item -Path . -Name Dockerfile -ItemType File
    ```
 
 
@@ -89,7 +89,7 @@ To build the image, you'll need to use a Dockerfile. A Dockerfile is simply a te
 
    The `docker build` command uses the Dockerfile to build a new image. You might have noticed that Docker downloaded a lot of "layers". This is because you instructed the builder that you wanted to start from the `node:18-alpine` image. But, since you didn't have that on your machine, Docker needed to download the image.
 
-   After Docker downloaded the image, the instructions from the Dockerfile copied in your application and used `yarn` to install your application's dependencies. The `CMD` directive specifies the default command to run when starting a container from this image.
+   After Docker downloaded the image, the instructions from the Dockerfile are copied into your application and used `yarn` to install your application's dependencies. The `CMD` directive specifies the default command to run when starting a container from this image.
 
    Finally, the `-t` flag tags your image. Think of this as a human-readable name for the final image. Since you named the image `getting-started`, you can refer to that image when you run a container.
 
@@ -102,7 +102,7 @@ Now that you have an image, you can run the application in a container using the
 1. Run your container using the `docker run` command and specify the name of the image you just created:
 
    ```console
-   $ docker run -dp 127.0.0.1:3000:3000 getting-started
+    docker run -dp 127.0.0.1:3000:3000 getting-started
    ```
 
    The `-d` flag (short for `--detach`) runs the container in the background.
@@ -132,7 +132,7 @@ If you take a quick look at your containers, you should see at least one contain
 Run the following `docker ps` command in a terminal to list your containers.
 
 ```console
-$ docker ps
+ docker ps
 ```
 Output similar to the following should appear.
 ```console
